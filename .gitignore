@@ -1,0 +1,6 @@
+# Runtime state, credentials and logs never go in the repo.
+state/
+config/*.env
+__pycache__/
+*.pyc
+*.log
