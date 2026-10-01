@@ -34,7 +34,7 @@ from .ledger import ACTION, ASK, VERDICT, Ledger
 
 ALLOW, ASK_OPERATOR, DENY = "allow", "ask", "deny"
 
-# action classes that always escalate in v0 (vision §3 ask-triggers)
+# action classes that always escalate in v0 (architecture §3, the ask-triggers row)
 ASK_CLASSES = {"irreversible", "spend", "outbound_comms", "cross_person",
                "physical", "medical_consequential", "legal_consequential"}
 

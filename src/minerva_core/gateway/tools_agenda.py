@@ -2,7 +2,7 @@
 
 Three tools, governed like everything else (every call rides GovernanceGate
 and lands in the hash-chained ledger): agenda_list (read), agenda_add and
-agenda_update (class agenda_write - flippable into MINERVA_ASK_CLASSES /
+agenda_update (class agenda_write - flippable into governance.ASK_CLASSES /
 MINERVA_INLINE_CLASSES the day the operator wants agenda changes approval-gated or
 warden-reviewed; today they are allow-class: the file is HER OWN queue in
 state/, no external effect).

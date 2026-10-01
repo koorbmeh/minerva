@@ -116,6 +116,14 @@ so concurrent jobs never race on the main hash chain.
   configured for; a missing key is an error, never a quiet switch to a different model.
 - **Stdlib only.** No third-party packages, so the trust boundary is small enough to read.
 
+## Design documents
+
+- [docs/architecture.md](docs/architecture.md): the system this runtime was the first tier of,
+  what was built against the design, and the build order.
+- [docs/engine-interface.md](docs/engine-interface.md): the engine seam, the event taxonomy, the
+  governance gate and the ledger with its anti-nag state machine. The code's "spec §N" comments
+  refer to its sections.
+
 ## Known gaps
 
 Found in a review of this snapshot and left as they were, since the project is parked:
@@ -130,7 +138,7 @@ Found in a review of this snapshot and left as they were, since the project is p
 - **The Venice chat lane is outside the dollar budget.** Venice bills in its own credits, so
   that lane records tokens but no dollar cost.
 - Some comments mention launchers and design notes from the private project that are not in
-  this repository.
+  this repository; the two design documents the code cites by section are in `docs/`.
 
 ## Running it
 

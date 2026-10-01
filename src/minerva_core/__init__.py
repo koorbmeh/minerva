@@ -2,7 +2,7 @@
 
 Stdlib only. Engines (Hermes, frontier APIs, slim loop) plug in behind
 engine.EngineAdapter; everything here outlives any engine choice.
-Spec: ../../Minerva-Engine-Interface.md
+Spec: ../../docs/engine-interface.md
 """
 
 __version__ = "0.1.0"

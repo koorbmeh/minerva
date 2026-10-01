@@ -16,9 +16,9 @@ chat, and morning brief take, mutually excluding it from those main-state-dir
 gateways. If the lock is busy, the NOTE is skipped (logged) rather than forking
 the chain - the job's own ledger and jobs.jsonl keep the full record either way.
 
-Decomposition rides the same queue: a job's session may job_submit sub-jobs
-(capped per session + by MAX_PENDING), which this drainer picks up on its next
-claim pass - recursion through the queue, bounded by the same anti-flood rails.
+Decomposition was meant to ride the same queue: a job's session may job_submit
+sub-jobs (capped per session + by MAX_PENDING), but in this snapshot they land in
+the job's own isolated queue, which nothing drains (README, Known gaps).
 
 Rails: kill switch (state/STOP) stops claiming and dispatch; the per-job budget
 pre-check + timeout live in agent_runner. MINERVA_ORCHESTRATOR_WORKERS bounds
@@ -200,7 +200,7 @@ class Orchestrator:
 
     # ---- the drain pass ---------------------------------------------------
     def drain(self, max_jobs: int | None = None) -> dict:
-        """Run every currently-pending job (and any sub-jobs they submit)
+        """Run every currently-pending job (sub-jobs a job submits go to its own queue)
         through the pool, bounded by n_workers concurrency and max_jobs total.
         Returns a summary. Never raises."""
         t0 = time.time()

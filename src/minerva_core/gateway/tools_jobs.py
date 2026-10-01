@@ -3,7 +3,7 @@
 Three tools, governed like everything else (every call rides GovernanceGate and
 lands in the hash-chained ledger):
   * job_submit  - drop a high-level GOAL on the queue (class job_write -
-                  flippable into MINERVA_ASK_CLASSES / MINERVA_INLINE_CLASSES
+                  flippable into governance.ASK_CLASSES / MINERVA_INLINE_CLASSES
                   the day the operator wants new jobs approval-gated or warden-
                   reviewed; today it is an allow-class - the orchestrator runs
                   each job under its OWN governed gateway + budget + kill
