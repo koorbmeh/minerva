@@ -16,7 +16,7 @@ $raw = [IO.File]::ReadAllText($cfg)
 $m = [regex]::Match($raw, "MINERVA_TOOLS:\s*([^`r`n]*)")
 if (-not $m.Success) {
   Write-Host "Could not find MINERVA_TOOLS in the config - the minerva MCP registration"
-  Write-Host "looks different than expected. Nothing changed. Tell Claude next session."
+  Write-Host "looks different than expected. Nothing changed. Check the config by hand."
   exit 1
 }
 

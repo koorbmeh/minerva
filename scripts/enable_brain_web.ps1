@@ -16,7 +16,7 @@ $raw = [IO.File]::ReadAllText($cfg)
 
 if ($raw -notmatch "MINERVA_TOOLS:") {
   Write-Host "Could not find MINERVA_TOOLS in the config - the minerva MCP registration"
-  Write-Host "looks different than expected. Nothing changed. Tell Claude next session."
+  Write-Host "looks different than expected. Nothing changed. Check the config by hand."
   exit 1
 }
 
@@ -44,4 +44,4 @@ Write-Host "FREE Nous model the morning brainstorm runs on) can READ your Brain 
 Write-Host "fetch web pages during their sessions. Reading means that content can"
 Write-Host "transit those providers. Brain WRITES stay impossible for engines."
 Write-Host "If you ever want it off: restore the .bak listed above (remove its"
-Write-Host "read-only flag first) or tell Claude to flip it back."
+Write-Host "read-only flag first) or edit MINERVA_TOOLS and MINERVA_BRAIN in config.yaml back by hand."

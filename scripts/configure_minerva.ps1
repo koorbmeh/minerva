@@ -40,4 +40,4 @@ hermes mcp add --help *> "$S\h-mcp-add.txt"
 hermes mcp list *> "$S\h-mcp-list.txt"
 hermes dashboard --status *> "$S\h-dash-status.txt"
 
-Write-Host "`nDONE - tell Claude to read state\" -ForegroundColor Green
+Write-Host "`nDONE - the outputs are in state\" -ForegroundColor Green

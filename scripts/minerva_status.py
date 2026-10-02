@@ -118,7 +118,7 @@ def main() -> int:
     if os.path.exists(lp):
         ok, n, bad = Ledger(lp).verify_chain()
         say(f"  ledger: {n} entries, chain "
-            + ("INTACT" if ok else f"BROKEN at {bad} - tell Claude"))
+            + ("INTACT" if ok else f"BROKEN at {bad} - find out why before trusting it"))
         try:
             proposals = ProposalIndex(Ledger(lp))
             open_p = [r for r in proposals._scan().values()

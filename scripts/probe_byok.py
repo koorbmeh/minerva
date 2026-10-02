@@ -131,7 +131,7 @@ def main() -> int:
         print("\nALL GOOD - Minerva's frontier brain (your key, direct) is "
               "live and obeys the rulebook.")
     else:
-        print("\nSomething did not check out - paste this summary to Claude.")
+        print("\nSomething did not check out - see the summary above.")
     return 0 if passed else 1
 
 

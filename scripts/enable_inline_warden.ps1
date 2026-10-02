@@ -15,7 +15,7 @@ if (!(Test-Path $cfg)) { Write-Host "Hermes config not found at $cfg"; exit 1 }
 $raw = [IO.File]::ReadAllText($cfg)
 if ($raw -notmatch "MINERVA_STATE_DIR:") {
   Write-Host "Could not find MINERVA_STATE_DIR in the config - layout unexpected."
-  Write-Host "Nothing changed. Tell Claude next session."
+  Write-Host "Nothing changed. Check the config by hand."
   exit 1
 }
 

@@ -10,7 +10,7 @@ the server ACTUALLY says: field names, id keys, SSE event taxonomy, usage payloa
 shape, auth enforcement. Never crashes on a failed probe — every step is recorded,
 partial results are still useful.
 
-Writes:  state/contract-report.json   (Claude reads this from the session)
+Writes:  state/contract-report.json   (read back by whoever ran the check)
 Prints:  human-readable verdicts mapped to each CONTRACT-TODO.
 
 Stdlib only, like the rest of minerva_core. Read-only against Hermes apart from

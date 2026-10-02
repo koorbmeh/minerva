@@ -137,8 +137,8 @@ Found in a review of this snapshot and left as they were, since the project is p
   approve its own pending escalation. Making `decision_write` an ask class closes it.
 - **The Venice chat lane is outside the dollar budget.** Venice bills in its own credits, so
   that lane records tokens but no dollar cost.
-- Some comments mention launchers and design notes from the private project that are not in
-  this repository; the two design documents the code cites by section are in `docs/`.
+- Some comments mention design notes from the private project that are not in this
+  repository; the two design documents the code cites by section are in `docs/`.
 
 ## Running it
 
@@ -152,11 +152,27 @@ python scripts/supervisor.py                           # the daemons, from one w
 
 Credentials live in `config/*.env` files, which are git-ignored; each adapter says which
 variables it reads. `MINERVA_HOME` and `MINERVA_BRAIN` point the scripts at the project and at
-the knowledge base. The `.bat` launchers are the Windows one-click versions.
+the knowledge base. The `.bat` launchers at the top level are the Windows one-click versions:
+
+- **Running:** Start Minerva runs everything from one window; Minerva - STOP is the kill switch
+  (every tool call is denied until it is cleared) and Minerva - Resume clears it;
+  Minerva - Start Orchestrator runs the background-job worker on its own.
+- **Day to day:** Minerva - Status (what is running and what waits on the operator),
+  Minerva - Inbox (new pitches and approvals to answer; shown items are marked read),
+  Minerva - History (everything so far), Minerva - Agenda (the standing work queue),
+  Minerva - Audit (an independent model reviews the record since the last audit, for about a
+  cent).
+- **Trying:** Minerva - Brainstorm Now (one brainstorm tick now), Minerva - Connections (what is
+  connected, with one read-only test each), Minerva - Test Venice, Minerva - Test Image Gen and
+  Minerva - Test Video Gen (the Venice lanes; each costs a few cents, and the video test shows
+  its price and asks before it spends more).
+- **Setting up** (each asks before it changes anything): Minerva - Enable Morning Brief,
+  Minerva - Set Brainstorm Times, Minerva - Enable Agenda For Ticks and
+  Minerva - Enable Connection Awareness.
 
 ## Tests
 
-32 test files and 1,055 checks as of 2026-09-30, standard library only. Each file
+32 test files and 1,055 checks as of 2026-10-02, standard library only. Each file
 runs on its own (`python tests/test_ledger.py`); `run_tests.py` runs them all and fails if any
 file fails or finishes without reporting its checks. The GitHub Actions workflow in
 `.github/workflows/` runs the same command on Windows and Ubuntu.
